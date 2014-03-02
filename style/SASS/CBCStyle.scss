@@ -1,0 +1,107 @@
+@import 'utils'; 
+
+$pcolor: #53DF00;
+$pcolordark1: #58A72A;
+$pcolordark2: #369100;
+$pcolorlight1: #7EEF3C;
+$pcolorlight2: #9CEF6C;
+$ccolor: #00AA72;
+$ccolordark1: #207F60;
+$ccolordark2: #006E4A;
+$ccolorlight1: #35D4A0;
+$ccolorlight2: #60D4AE;
+$wcolor: #C0F400;
+$wcolordark1: #9AB72E;
+$wcolordark2: #7D9F00;
+$wcolorlight1: #D2FA3E;
+$wcolorlight2: #DCFA70;
+$rd-nav-med: 25em;
+$rd-nav-large: 48em;
+
+body {
+    margin:0;
+    padding:0;
+}
+
+header {
+    clear:both;
+    //display:block;
+    overflow:hidden;
+    background-color:$pcolor;
+    border-bottom: 5px solid black;
+    @include respond-min($rd-nav-large) {
+        padding-bottom:.5em;
+    }
+    h1 {
+        margin:0;
+        padding:.2em .25em;
+        //clear:none;
+        font-size:2em;
+        color:$ccolordark2;
+        @include respond-min($rd-nav-med) {
+            font-size:2.5em;
+        }
+        @include respond-min($rd-nav-large) {
+            display:inline-block;
+            padding:.3em .25em;
+        }
+    }
+}
+nav {
+    clear:left;
+    //width:100%;
+    //background-color:pink;
+    width:100%;
+    @include respond-min($rd-nav-med) {
+        //float:left;
+    }
+    @include respond-min($rd-nav-large) {
+        float:right;
+        clear:none;
+        width:auto;
+    }
+    ul {
+        margin:0;
+        padding:0;
+        //border: 1px solid black;
+        @include respond-min($rd-nav-med) {
+            float:left;
+        }
+        li {
+            border-bottom:1px solid #AAA;            
+            list-style:none;
+            @include respond-min($rd-nav-med) {
+                float:left;
+                border-bottom:0;
+            }
+        }
+        li:last-child {
+            bottom-border:0;
+            }
+        a {
+            display:block;
+            padding: .5em .8em;
+            text-decoration:none;
+            background-color:$ccolorlight1;
+            color:$ccolordark2;
+            @include respond-min($rd-nav-med) {
+                margin: 0 .25em;
+            }
+        }
+        a:hover {
+            background-color:$ccolordark2;
+            color:$ccolorlight1;
+        }
+    }
+}
+
+#content {
+    //display:block;
+    clear:both;
+    padding:0 .2em;
+    //width:100%;
+}
+h1 {
+    color:blue;
+}
+
