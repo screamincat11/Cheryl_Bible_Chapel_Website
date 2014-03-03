@@ -49,8 +49,9 @@ ul {
     list-style: circle inside; }
 
 ol {
-  padding: 0 2em; }
+  padding: 0 2em .4em 2em; }
   ol li {
+    padding: 0 0 .5em 0;
     list-style: decimal outside; }
   ol ol {
     padding: 0 1.5em; }

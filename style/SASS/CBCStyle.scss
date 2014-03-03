@@ -75,8 +75,9 @@ ul {
     }
 }
 ol {
-    padding:0 2em;
+    padding:0 2em .4em 2em;
     li {
+        padding: 0 0 .5em 0;
         list-style:decimal outside;
     }
     ol {
