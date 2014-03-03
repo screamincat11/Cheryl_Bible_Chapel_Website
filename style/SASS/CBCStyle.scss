@@ -1,5 +1,25 @@
 @import 'utils'; 
+//http://colorschemedesigner.com/#3m61TyiyiJDK5
+$pcolor: #048BA4;
+$pcolordark1: #275E68;
+$pcolordark2: #004450;
+$pcolorlight1: #58D0E7;
+$pcolorlight2: #9BDBE7;
+$ccolor: #1338B2;
+$ccolordark1: #314071;
+$ccolordark2: #031657;
+$ccolorlight1: #6685EB;
+$ccolorlight2: #A4B4EB;
+$wcolor: #00C52C;
+$wcolordark1: #2E7D3F;
+$wcolordark2: #006115;
+$wcolorlight1: #58F07A;
+$wcolorlight2: #9FF0B1;
 
+$rd-nav-med: 27em;
+$rd-nav-large: 52em;
+$rd-nav-xlarge: 65em;
+/*
 $pcolor: #53DF00;
 $pcolordark1: #58A72A;
 $pcolordark2: #369100;
@@ -17,25 +37,54 @@ $wcolorlight1: #D2FA3E;
 $wcolorlight2: #DCFA70;
 $rd-nav-med: 25em;
 $rd-nav-large: 48em;
-
+*/
 body {
     margin:0;
     padding:0;
+    background-color:$ccolorlight2;
+    font-family:"Trebuchet MS", Helvetica, sans-serif;
 }
-
+//h1 {
+    //padding: .5em .2em .2em .2em;
+//}
+h2 {
+    padding: .5em .2em .2em .2em;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+h3 {
+    padding: .3em .2em .2em .2em;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+p {
+    padding:.2em .4em;
+}
+a {
+    color:$ccolor;
+    text-decoration:none;
+    font-weight:bold;
+    &:visited {
+        color:$ccolordark2;
+    }
+}
+ul {
+    padding:0 .4em;
+    li {
+        list-style:circle inside;
+    }
+}
 header {
     clear:both;
-    //display:block;
     overflow:hidden;
     background-color:$pcolor;
-    border-bottom: 5px solid black;
+    border-bottom: 5px solid $ccolordark2;
     @include respond-min($rd-nav-large) {
         padding-bottom:.5em;
     }
     h1 {
         margin:0;
         padding:.2em .25em;
-        //clear:none;
         font-size:2em;
         color:$ccolordark2;
         @include respond-min($rd-nav-med) {
@@ -49,18 +98,6 @@ header {
 }
 nav {
     clear:left;
-    //width:100%;
-    //background-color:pink;
-    //width:100%;
-    // *** this code is for collapsing/showing the menu
-    /*
-    max-height:2em;
-    -moz-transition: 1s;
-    -ms-transition: 1s;
-    -o-transition: 1s;
-    -webkit-transition: 1s;
-    transition: .5s;  
-    */
     
     @include respond-min($rd-nav-med) {
         //float:left;
@@ -84,28 +121,45 @@ nav {
                 float:left;
                 border-bottom:0;
             }
-        }
-        li:last-child {
-            bottom-border:0;
+            &:last-child {
+                bottom-border:0;
             }
-        a {
-            display:block;
-            padding: .5em .8em;
-            font-size:1em;
-            text-decoration:none;
-            background-color:$ccolorlight1;
-            color:$ccolordark2;
-            @include respond-min($rd-nav-med) {
-                margin: 0 .25em;
+            a {
+                display:block;
+                padding: .5em .8em;
+                font-size:1em;
+                text-decoration:none;
+                background-color:$ccolorlight1;
+                color:$ccolordark2;
+                @include respond-min($rd-nav-med) {
+                    margin: 0 .25em;
+                    border-top-left-radius: 0.5em;
+                    border-top-right-radius: 0.5em;
+                    border-bottom-right-radius: 0;
+                    border-bottom-left-radius: 0;
+                }
+                @include respond-min($rd-nav-large) {
+                    margin: .4em .2em;
+                    border-radius:.3em;
+                    font-size:1.1em;
+                }
+                @include respond-min($rd-nav-xlarge) {
+                    margin: .5em .3em;
+                    border-radius:.4em;
+                    font-size:1.2em;
+                }
+                &:hover {
+                    background-color:$ccolordark2;
+                    color:$ccolorlight1;
+                }
+            }
+            &.nav-current {
+                a {
+                    @extend a:hover;
+                    font-weight:bold;
+                }
             }
         }
-        a:hover {
-            background-color:$ccolordark2;
-            color:$ccolorlight1;
-        }
-    }
-    .nav-current {
-        font-weight:bold;
     }
     h3 {
         margin:0;
@@ -179,8 +233,24 @@ nav {
     clear:both;
     //padding:0 .2em;
     width:100%;
+    section {
+        margin:.5em;
+        padding:.3em;
+        overflow:hidden;
+        //border: 2px dashed $wcolordark1;
+        border-radius:.7em;
+        background-color:$ccolorlight1;
+        h2 {
+            padding:.2em .2em .2em .2em;
+            color:$ccolordark2;
+        }
+        h3 {
+            color:$ccolordark2;
+        }
+    }
     img {
         width:100%;
+        border-radius:.7em;
         @include respond-min($rd-nav-med + 12em) {
             float:right;
             width:50%;
@@ -188,15 +258,6 @@ nav {
         @include respond-min($rd-nav-large) {
             width:40%;
         }
-    }
-    h2 {
-        padding: .5em .2em .2em .2em;
-    }
-    h3 {
-        padding: .3em .2em .2em .2em;
-    }
-    p {
-        padding:.2em .2em;
     }
 }
 
