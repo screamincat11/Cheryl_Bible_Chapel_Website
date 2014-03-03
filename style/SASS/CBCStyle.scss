@@ -74,10 +74,25 @@ ul {
         list-style:circle inside;
     }
 }
+ol {
+    padding:0 2em;
+    li {
+        list-style:decimal outside;
+    }
+    ol {
+        padding:0 1.5em;
+        li {
+            list-style:lower-latin outside;
+        }
+    }
+}
+strong {
+    font-weight:bold;
+}
 header {
     clear:both;
     overflow:hidden;
-    background-color:$pcolor;
+    background-color:$ccolorlight2;
     border-bottom: 5px solid $ccolordark2;
     @include respond-min($rd-nav-large) {
         padding-bottom:.5em;
