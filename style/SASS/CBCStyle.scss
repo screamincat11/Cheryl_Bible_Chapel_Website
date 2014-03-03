@@ -51,7 +51,17 @@ nav {
     clear:left;
     //width:100%;
     //background-color:pink;
-    width:100%;
+    //width:100%;
+    // *** this code is for collapsing/showing the menu
+    /*
+    max-height:2em;
+    -moz-transition: 1s;
+    -ms-transition: 1s;
+    -o-transition: 1s;
+    -webkit-transition: 1s;
+    transition: .5s;  
+    */
+    
     @include respond-min($rd-nav-med) {
         //float:left;
     }
@@ -81,6 +91,7 @@ nav {
         a {
             display:block;
             padding: .5em .8em;
+            font-size:1em;
             text-decoration:none;
             background-color:$ccolorlight1;
             color:$ccolordark2;
@@ -93,15 +104,99 @@ nav {
             color:$ccolorlight1;
         }
     }
+    .nav-current {
+        font-weight:bold;
+    }
+    h3 {
+        margin:0;
+        padding:.5em;
+        //position: absolute;
+        float:right;
+        //top: 0;
+        //left: auto;
+        //right: 0;
+        display: block;
+        //width: 4em;
+        //height: 2.5em; 
+        font-size:inherit;
+        background-color: #777;// url(photos/icons.png) no-repeat -205px 45%;
+        //text-indent: -999em;
+        text-align:center;
+        cursor: pointer;
+        @include respond-min($rd-nav-med) {
+            position: absolute;
+            left: -999em;
+        }
+    }
+    .nav-menu .nav-primary.expanded h3 {
+       // background-position: -169px 45%;
+    }
 }
+//nav:hover {
+    //max-height:9em;
+//}
+
+.nav-menu nav {
+   //margin: 0 0 1.5em;
+   position: relative;
+   overflow: hidden;
+}
+.nav-menu nav a {
+   padding-right: 3em;
+}
+.nav-menu nav h3 {
+        margin:0;
+        padding:.5em;
+        float:right;
+        display: block;
+        font-size:inherit;
+        background-color: #777;// url(photos/icons.png) no-repeat -205px 45%;
+        text-align:center;
+        cursor: pointer;
+        @include respond-min($rd-nav-med) {
+            position: absolute;
+            left: -999em;
+        }
+}
+.nav-menu nav li {
+   clear: left;
+   display: none;
+}    
+.nav-menu nav.expanded li,
+.nav-menu nav li.nav-current {
+   display: list-item;
+} 
+.nav-menu nav li.nav-current {
+   border-bottom-width: 0;
+}
+.nav-menu nav.expanded li.nav-current {
+   border-bottom-width: 1px;
+}
+
 
 #content {
     //display:block;
     clear:both;
-    padding:0 .2em;
-    //width:100%;
-}
-h1 {
-    color:blue;
+    //padding:0 .2em;
+    width:100%;
+    img {
+        width:100%;
+        @include respond-min($rd-nav-med + 12em) {
+            float:right;
+            width:50%;
+        }
+        @include respond-min($rd-nav-large) {
+            width:40%;
+        }
+    }
+    h2 {
+        padding: .5em .2em .2em .2em;
+    }
+    h3 {
+        padding: .3em .2em .2em .2em;
+    }
+    p {
+        padding:.2em .2em;
+    }
 }
 

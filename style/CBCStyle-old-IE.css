@@ -16,7 +16,14 @@ header {
 
 nav {
   clear: left;
-  width: 100%; }
+  /*
+  max-height:2em;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+  -webkit-transition: 1s;
+  transition: .5s;  
+  */ }
   nav ul {
     margin: 0;
     padding: 0;
@@ -31,6 +38,7 @@ nav {
     nav ul a {
       display: block;
       padding: .5em .8em;
+      font-size: 1em;
       text-decoration: none;
       background-color: #35d4a0;
       color: #006e4a;
@@ -38,10 +46,63 @@ nav {
     nav ul a:hover {
       background-color: #006e4a;
       color: #35d4a0; }
+  nav .nav-current {
+    font-weight: bold; }
+  nav h3 {
+    margin: 0;
+    padding: .5em;
+    float: right;
+    display: block;
+    font-size: inherit;
+    background-color: #777;
+    text-align: center;
+    cursor: pointer;
+    position: absolute;
+    left: -999em; }
+
+.nav-menu nav {
+  position: relative;
+  overflow: hidden; }
+
+.nav-menu nav a {
+  padding-right: 3em; }
+
+.nav-menu nav h3 {
+  margin: 0;
+  padding: .5em;
+  float: right;
+  display: block;
+  font-size: inherit;
+  background-color: #777;
+  text-align: center;
+  cursor: pointer;
+  position: absolute;
+  left: -999em; }
+
+.nav-menu nav li {
+  clear: left;
+  display: none; }
+
+.nav-menu nav.expanded li,
+.nav-menu nav li.nav-current {
+  display: list-item; }
+
+.nav-menu nav li.nav-current {
+  border-bottom-width: 0; }
+
+.nav-menu nav.expanded li.nav-current {
+  border-bottom-width: 1px; }
 
 #content {
   clear: both;
-  padding: 0 .2em; }
-
-h1 {
-  color: blue; }
+  width: 100%; }
+  #content img {
+    width: 100%;
+    float: right;
+    width: 50%; }
+  #content h2 {
+    padding: .5em .2em .2em .2em; }
+  #content h3 {
+    padding: .3em .2em .2em .2em; }
+  #content p {
+    padding: .2em .2em; }
