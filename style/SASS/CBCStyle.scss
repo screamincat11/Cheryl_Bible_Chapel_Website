@@ -41,7 +41,7 @@ $rd-nav-large: 48em;
 body {
     margin:0;
     padding:0;
-    background-color:$ccolorlight2;
+    background-color:$ccolorlight1;
     font-family:"Trebuchet MS", Helvetica, sans-serif;
 }
 //h1 {
@@ -59,11 +59,16 @@ h3 {
 }
 p {
     padding:.2em .4em;
+    //margin:.2em .4em;
 }
 a {
     color:$ccolor;
     text-decoration:none;
     font-weight:bold;
+    font-size:120%;
+    @include respond-min($rd-nav-med) {
+        font-size:100%;
+    }
     &:visited {
         color:$ccolordark2;
     }
@@ -94,7 +99,9 @@ header {
     clear:both;
     overflow:hidden;
     background-color:$ccolorlight2;
-    border-bottom: 5px solid $ccolordark2;
+    @include respond-min($rd-nav-med) {
+        border-bottom: 5px solid $ccolordark2;
+    }
     @include respond-min($rd-nav-large) {
         padding-bottom:.5em;
     }
@@ -138,12 +145,12 @@ nav {
                 border-bottom:0;
             }
             &:last-child {
-                bottom-border:0;
+                border-bottom:0;
             }
             a {
                 display:block;
                 padding: .5em .8em;
-                font-size:1em;
+                font-size:1.5em;
                 text-decoration:none;
                 background-color:$ccolorlight1;
                 color:$ccolordark2;
@@ -153,6 +160,7 @@ nav {
                     border-top-right-radius: 0.5em;
                     border-bottom-right-radius: 0;
                     border-bottom-left-radius: 0;
+                    font-size:1em;
                 }
                 @include respond-min($rd-nav-large) {
                     margin: .4em .2em;
@@ -188,7 +196,7 @@ nav {
         display: block;
         //width: 4em;
         //height: 2.5em; 
-        font-size:inherit;
+        //font-size:1.5em;
         background-color: #777;// url(photos/icons.png) no-repeat -205px 45%;
         //text-indent: -999em;
         text-align:center;
@@ -206,41 +214,45 @@ nav {
     //max-height:9em;
 //}
 
-.nav-menu nav {
-   //margin: 0 0 1.5em;
-   position: relative;
-   overflow: hidden;
-}
-.nav-menu nav a {
-   padding-right: 3em;
-}
-.nav-menu nav h3 {
-        margin:0;
-        padding:.5em;
-        float:right;
-        display: block;
-        font-size:inherit;
-        background-color: #777;// url(photos/icons.png) no-repeat -205px 45%;
-        text-align:center;
-        cursor: pointer;
-        @include respond-min($rd-nav-med) {
-            position: absolute;
-            left: -999em;
+.nav-menu {
+    nav {
+        position: relative;
+        overflow: hidden;
+        h3 {
+            margin:0;
+            padding:.5em;
+            float:right;
+            display: block;
+            font-size:1.5em;
+            background-color: #777;// url(photos/icons.png) no-repeat -205px 45%;
+            text-align:center;
+            cursor: pointer;
+            @include respond-min($rd-nav-med) {
+                position: absolute;
+                left: -999em;
+            }
         }
-}
-.nav-menu nav li {
-   clear: left;
-   display: none;
-}    
-.nav-menu nav.expanded li,
-.nav-menu nav li.nav-current {
-   display: list-item;
-} 
-.nav-menu nav li.nav-current {
-   border-bottom-width: 0;
-}
-.nav-menu nav.expanded li.nav-current {
-   border-bottom-width: 1px;
+        a {
+            padding-right: 3em;
+        }
+        li {
+            clear: left;
+            display: none;
+        }    
+        li.nav-current {
+            border-bottom-width: 0;
+        }
+    }
+    nav.expanded li.nav-current {
+        border-bottom-width: 1px;
+    }
+    nav.expanded li:last-child {
+        border-bottom: 5px solid $ccolordark2;
+    }
+    nav.expanded li,
+    nav li.nav-current {
+        display: list-item;
+    } 
 }
 
 
@@ -251,11 +263,11 @@ nav {
     width:100%;
     section {
         margin:.5em;
-        padding:.3em;
+        //padding:.3em;
         overflow:hidden;
         //border: 2px dashed $wcolordark1;
         border-radius:.7em;
-        background-color:$ccolorlight1;
+        background-color:$ccolorlight2;
         h2 {
             padding:.2em .2em .2em .2em;
             color:$ccolordark2;
@@ -263,16 +275,19 @@ nav {
         h3 {
             color:$ccolordark2;
         }
-    }
-    img {
-        width:100%;
-        border-radius:.7em;
-        @include respond-min($rd-nav-med + 12em) {
-            float:right;
-            width:50%;
-        }
-        @include respond-min($rd-nav-large) {
-            width:40%;
+        img {
+            width:100%;
+            border-radius:.7em;
+            /*@include respond-min($rd-nav-med) {
+            }*/
+            @include respond-min($rd-nav-med + 12em) {
+                //margin: 0 0 0 .5em;
+                float:right;
+                width:50%;
+            }
+            @include respond-min($rd-nav-large) {
+                width:40%;
+            }
         }
     }
 }
