@@ -17,11 +17,16 @@ $wcolorlight2: #DCFA70;
 $rd-nav-med: 25em;
 $rd-nav-large: 48em;
 */
+html {
+  background-color: #004450; }
+
 body {
   margin: 0;
   padding: 0;
   background-color: #6685eb;
-  font-family: "Trebuchet MS", Helvetica, sans-serif; }
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  max-width: 62em;
+  margin: 0 auto; }
 
 h2 {
   padding: .5em .2em .2em .2em;

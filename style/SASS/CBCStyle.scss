@@ -38,11 +38,20 @@ $wcolorlight2: #DCFA70;
 $rd-nav-med: 25em;
 $rd-nav-large: 48em;
 */
+html {
+	@include old-ie {
+    background-color:$pcolordark2;
+    }
+}
 body {
     margin:0;
     padding:0;
     background-color:$ccolorlight1;
     font-family:"Trebuchet MS", Helvetica, sans-serif;
+	@include old-ie {
+		max-width: 62em;	
+		margin: 0 auto;
+	}
 }
 //h1 {
     //padding: .5em .2em .2em .2em;
