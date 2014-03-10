@@ -15,6 +15,11 @@ $wcolordark1: #2E7D3F;
 $wcolordark2: #006115;
 $wcolorlight1: #58F07A;
 $wcolorlight2: #9FF0B1;
+$xcolor: #FF7C00;
+$xcolordark1: #A26D3B;
+$xcolordark2: #7D3D00;
+$xcolorlight1: #FFAD5E;
+$xcolorlight2: #FFD3A9;
 
 $rd-nav-med: 27em;
 $rd-nav-large: 52em;
@@ -99,6 +104,30 @@ ol {
         li {
             list-style:lower-latin outside;
         }
+    }
+}
+table, th, td {
+        border:1px solid black;
+}
+table {
+    margin:0 .25em;
+    border-collapse:collapse;
+    background-color:$xcolorlight2;
+    th, td {
+        padding:.25em;
+    }
+    th {
+        background-color:$xcolordark2;
+        color:$xcolorlight2;
+        font-weight:bold;
+    }
+    .tb_time {
+        text-align:right;
+        white-space:nowrap;
+    }
+    .tb_day {
+        vertical-align:middle;
+        font-weight:bold;
     }
 }
 strong {
