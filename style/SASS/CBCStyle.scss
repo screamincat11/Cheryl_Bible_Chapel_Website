@@ -22,7 +22,7 @@ $xcolorlight1: #FFAD5E;
 $xcolorlight2: #FFD3A9;
 
 $rd-nav-med: 27em;
-$rd-nav-large: 52em;
+$rd-nav-large: 56em;
 $rd-nav-xlarge: 65em;
 /*
 $pcolor: #53DF00;
@@ -110,7 +110,7 @@ table, th, td {
         border:1px solid black;
 }
 table {
-    margin:0 .25em;
+    MARGIN:0 .25em;
     border-collapse:collapse;
     background-color:$xcolorlight2;
     th, td {
@@ -192,33 +192,86 @@ nav {
                 text-decoration:none;
                 background-color:$ccolorlight1;
                 color:$ccolordark2;
+	-moz-box-shadow:inset 0px 1px 0px 0px $ccolorlight2;
+	-webkit-box-shadow:inset 0px 1px 0px 0px $ccolorlight2;
+	box-shadow:inset 0px 1px 0px 0px $ccolorlight2;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, $ccolorlight1), color-stop(1, $ccolorlight2) );
+	background:-moz-linear-gradient( center top, $ccolorlight1 5%, $ccolorlight2 100% );
+	//filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='$ccolorlight1', endColorstr='$ccolorlight2');
+	//filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='$ccolorlight1', endColorstr='$ccolordark1');
+	background-color:$ccolorlight1;
+    /*
+	-webkit-border-top-left-radius:8pxr
+	-moz-border-radius-topleft:8px;
+	border-top-left-radius:8px;
+	-webkit-border-top-right-radius:8px;
+	-moz-border-radius-topright:8px;
+	border-top-right-radius:8px;
+	-webkit-border-bottom-right-radius:8px;
+	-moz-border-radius-bottomright:8px;
+	border-bottom-right-radius:8px;
+	-webkit-border-bottom-left-radius:8px;
+	-moz-border-radius-bottomleft:8px;
+	border-bottom-left-radius:8px;
+    */
+	text-indent:0px;
+	border:1px solid $ccolor;
+	//display:inline-block;
+	color:$ccolordark2;
+	//font-family:Arial;
+	//font-size:15px;
+	font-weight:bold;
+	font-style:normal;
+	//height:50px;
+	//line-height:50px;
+	//width:100px;
+	text-decoration:none;
+	text-align:center;
+	text-shadow:0px 0px .2em $ccolorlight2;
+	//text-shadow:1px 1px 0 $ccolorlight2;
                 @include respond-min($rd-nav-med) {
                     margin: 0 .25em;
                     border-top-left-radius: 0.5em;
                     border-top-right-radius: 0.5em;
                     border-bottom-right-radius: 0;
                     border-bottom-left-radius: 0;
-                    font-size:1em;
+                    font-size:1.1em;
                 }
                 @include respond-min($rd-nav-large) {
                     margin: .4em .2em;
                     border-radius:.3em;
-                    font-size:1.1em;
+                    font-size:1.2em;
                 }
                 @include respond-min($rd-nav-xlarge) {
                     margin: .5em .3em;
                     border-radius:.4em;
-                    font-size:1.2em;
+                    font-size:1.3em;
                 }
                 &:hover {
-                    background-color:$ccolordark2;
-                    color:$ccolorlight1;
+                    //background-color:$ccolordark2;
+                    //color:$ccolorlight1;
+ 	/*background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, $ccolordark1), color-stop(1, $ccolorlight1) );
+	background:-moz-linear-gradient( center top, $ccolordark1 5%, $ccolorlight1 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='$ccolordark1', endColorstr='ccolorlight1');
+	background-color:$ccolordark2; 
+    */
+
+	text-shadow:1px 1px 0px $ccolordark2;
+    color:$ccolorlight2;
+ 	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, $ccolordark2), color-stop(1, $ccolordark1) );
+	background:-moz-linear-gradient( center top, $ccolordark2 5%, $ccolordark1 100% );
+	//filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='$ccolordark2', endColorstr='$ccolordark1');
+	background-color:$ccolordark2; 
+                }
+                &:active {
+                    position:relative;
+                    top:1px;
                 }
             }
             &.nav-current {
                 a {
                     @extend a:hover;
-                    font-weight:bold;
+                    font-weight:bolder;
                 }
             }
         }
@@ -265,6 +318,22 @@ nav {
             background-color: #777;// url(photos/icons.png) no-repeat -205px 45%;
             text-align:center;
             cursor: pointer;
+	-moz-box-shadow:inset 0px 1px 0px 0px #BBB;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #BBB;
+	box-shadow:inset 0px 1px 0px 0px #BBB;
+	//background-color:$ccolorlight1;
+	text-indent:0px;
+	border:1px solid black;
+	//display:inline-block;
+	//color:$ccolordark2;
+	//font-family:Arial;
+	//font-size:15px;
+	font-weight:bold;
+	font-style:normal;
+	//height:50px;
+	//line-height:50px;
+	//width:100px;
+	text-shadow:1px 1px 0px #BBB;
             @include respond-min($rd-nav-med) {
                 position: absolute;
                 left: -999em;
@@ -278,11 +347,11 @@ nav {
             display: none;
         }    
         li.nav-current {
-            border-bottom-width: 0;
+            //border-bottom-width: 0;
         }
     }
     nav.expanded li.nav-current {
-        border-bottom-width: 1px;
+        //border-bottom-width: 1px;
     }
     nav.expanded li:last-child {
         border-bottom: 5px solid $ccolordark2;
