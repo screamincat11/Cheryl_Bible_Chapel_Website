@@ -332,6 +332,10 @@ nav {
     }
 }
 
+.hidden {
+    display:none;
+}
+
 @media print {
     body {
         font: 12pt Georgia, "Times New Roman", Times, serif;
