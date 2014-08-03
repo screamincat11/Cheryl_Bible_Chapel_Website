@@ -21,28 +21,10 @@ $xcolordark2: #7D3D00;
 $xcolorlight1: #FFAD5E;
 $xcolorlight2: #FFD3A9;
 
-$rd-nav-med: 30em;
+$rd-nav-med: 31em;
 $rd-nav-large: 56em;
 $rd-nav-xlarge: 65em;
-/*
-$pcolor: #53DF00;
-$pcolordark1: #58A72A;
-$pcolordark2: #369100;
-$pcolorlight1: #7EEF3C;
-$pcolorlight2: #9CEF6C;
-$ccolor: #00AA72;
-$ccolordark1: #207F60;
-$ccolordark2: #006E4A;
-$ccolorlight1: #35D4A0;
-$ccolorlight2: #60D4AE;
-$wcolor: #C0F400;
-$wcolordark1: #9AB72E;
-$wcolordark2: #7D9F00;
-$wcolorlight1: #D2FA3E;
-$wcolorlight2: #DCFA70;
-$rd-nav-med: 25em;
-$rd-nav-large: 48em;
-*/
+
 html {
 	@include old-ie {
     background-color:$pcolordark2;
@@ -201,20 +183,17 @@ nav {
                 text-shadow:0px 0px .2em $ccolorlight2;
                 @include respond-min($rd-nav-med) {
                     margin: 0 .25em;
-                    border-top-left-radius: 0.5em;
-                    border-top-right-radius: 0.5em;
-                    border-bottom-right-radius: 0;
-                    border-bottom-left-radius: 0;
+                    @include border-top-radius(0.5em);
                     font-size:1.1em;
                 }
                 @include respond-min($rd-nav-large) {
                     margin: .4em .2em;
-                    border-radius:.3em;
+                    @include border-radius(0.3em);
                     font-size:1.2em;
                 }
                 @include respond-min($rd-nav-xlarge) {
                     margin: .5em .3em;
-                    border-radius:.4em;
+                    @include border-radius(0.4em);
                     font-size:1.3em;
                 }
                 &:hover {
@@ -308,7 +287,7 @@ nav {
     section {
         margin:.5em;
         overflow:hidden;
-        border-radius:.7em;
+        @include border-radius(0.7em);
         background-color:$ccolorlight2;
         h2 {
             padding:.2em .2em .2em .2em;
@@ -319,7 +298,7 @@ nav {
         }
         img {
             width:100%;
-            border-radius:.7em;
+            @include border-radius(0.7em);
             @include respond-min($rd-nav-med + 12em) {
                 float:right;
                 padding-left:.3em;

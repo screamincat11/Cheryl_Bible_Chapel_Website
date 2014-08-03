@@ -32,3 +32,24 @@ $old-ie: false !default;
 		@content;
 	}
 }
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+       -moz-border-radius: $radius;
+            border-radius: $radius;
+}
+        
+@mixin border-top-radius($radius) {
+    -webkit-border-top-left-radius: $radius;
+    -webkit-border-top-right-radius: $radius;
+    -webkit-border-bottom-right-radius: 0;
+    -webkit-border-bottom-left-radius: 0;
+       -moz-border-top-left-radius: $radius;
+       -moz-border-top-right-radius: $radius;
+       -moz-border-bottom-right-radius: 0;
+       -moz-border-bottom-left-radius: 0;
+            border-top-left-radius: $radius;
+            border-top-right-radius: $radius;
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+}
