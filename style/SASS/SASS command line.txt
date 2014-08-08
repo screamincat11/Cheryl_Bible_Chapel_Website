@@ -1,0 +1,1 @@
+\Cheryl_Bible_Chapel_Website>sass --watch style/SASS:style
