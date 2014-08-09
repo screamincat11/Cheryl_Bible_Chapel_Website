@@ -24,10 +24,17 @@ $xcolorlight2: #FFD3A9;
 $rd-nav-med: 31em;
 $rd-nav-large: 56em;
 $rd-nav-xlarge: 65em;
+$rd-nav-xxlarge: 85em;
+$rd-nav-xxxlarge: 100em;
 
 html {
 	@include old-ie {
     background-color:$pcolordark2;
+    }
+    @include respond-min($rd-nav-xxxlarge) {
+        background-color:$ccolordark2;
+        padding-bottom: 2em;
+        padding-top: .75em; 
     }
 }
 body {
@@ -40,6 +47,13 @@ body {
 		max-width: 62em;	
 		margin: 0 auto;
 	}
+    @include respond-min($rd-nav-xxxlarge) {
+      margin: 0 3%;
+      padding-bottom: 1em;
+      box-shadow: 0px 0px 20px #ffdddd;
+      border-radius: 1em;
+        
+    }
 }
 h2 {
     padding: .5em .2em .2em .2em;
@@ -121,6 +135,10 @@ header {
     }
     @include respond-min($rd-nav-large) {
         padding-bottom:.5em;
+    }
+    @include respond-min($rd-nav-xxxlarge) {
+        border-top-left-radius: .9em;
+        border-top-right-radius: .9em;
     }
     h1 {
         margin:0;
@@ -295,6 +313,12 @@ nav {
         -moz-column-count: 2;
         -webkit-column-count:2; /* Safari and Chrome */
         column-count:2;
+    }
+    @include respond-min($rd-nav-xxxlarge) {
+        margin: 0 1em;
+        -moz-column-gap:1em; /* Firefox */
+        -webkit-column-gap:1em; /* Safari and Chrome */ 
+        column-gap:1em;
     }
     section {
         margin:0 0 .5em 0;
