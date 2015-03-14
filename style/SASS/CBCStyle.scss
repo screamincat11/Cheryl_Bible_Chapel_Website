@@ -83,7 +83,21 @@ a {
 ul {
     padding:0 .4em;
     li {
-        list-style:circle inside;
+        list-style:disc inside;
+        font-weight: bold;
+    }
+    ul {
+        padding: 0 0 0 1.4em;
+        li {
+            list-style:square inside;
+            font-weight: normal;
+        }
+        ul {
+            li {
+                list-style:circle inside;
+                font-style: italic;
+            }
+        }
     }
 }
 ol {

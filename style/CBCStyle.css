@@ -43,7 +43,16 @@ a {
 ul {
   padding: 0 .4em; }
   ul li {
-    list-style: circle inside; }
+    list-style: disc inside;
+    font-weight: bold; }
+  ul ul {
+    padding: 0 0 0 1.4em; }
+    ul ul li {
+      list-style: square inside;
+      font-weight: normal; }
+    ul ul ul li {
+      list-style: circle inside;
+      font-style: italic; }
 
 ol {
   padding: 0 2em .4em 2em; }
